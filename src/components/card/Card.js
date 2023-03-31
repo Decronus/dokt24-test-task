@@ -2,11 +2,26 @@ import * as S from "./styles";
 import DeleteIcon from "../delete-icon/DeleteIcon";
 import RatingBlock from "../rating-block/RatingBlock";
 
-function Card({ category, title, price, description, rating, img }) {
+function Card({ category, title, price, description, rating, img, like }) {
+    function categoryColor() {
+        switch (category) {
+            case "men's clothing":
+                return "#5161EB";
+            case "jewelery":
+                return "#8BC0BD";
+            case "electronics":
+                return "#9CA0C3";
+            case "women's clothing":
+                return "#C487C9";
+            default:
+                return "cccccc";
+        }
+    }
+
     return (
         <S.CardWrap>
             <S.CardImg img={img}>
-                <S.CardBage>{category}</S.CardBage>
+                <S.CardBage color={categoryColor()}>{category}</S.CardBage>
                 <DeleteIcon />
             </S.CardImg>
 

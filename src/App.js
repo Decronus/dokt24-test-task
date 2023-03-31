@@ -32,6 +32,7 @@ function App() {
                                 category={el.category}
                                 rating={el.rating.rate}
                                 img={el.image}
+                                like={el.like}
                             />
                         );
                     })}

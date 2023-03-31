@@ -6,6 +6,8 @@ export const CardWrap = styled.div`
     border: 1px solid #e8e8e8;
     border-radius: 14px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const CardImg = styled.div`
@@ -22,7 +24,7 @@ export const CardImg = styled.div`
 
 export const CardInfo = styled.div`
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -38,7 +40,7 @@ export const CardPriceBlock = styled.div`
 
 export const CardBage = styled.div`
     height: 24px;
-    background: #9ca0c4;
+    background: ${({ color }) => color || "#5161EB"};
     border-radius: 4px;
     display: flex;
     justify-content: center;
@@ -50,8 +52,11 @@ export const CardBage = styled.div`
 export const CardRatingAndLike = styled.div`
     display: flex;
     gap: 16px;
-
     & > svg {
         cursor: pointer;
+        path {
+            fill: ${({ like }) => (like ? "#BF5A5A" : "none")};
+            stroke: ${({ like }) => (like ? "none" : "#B5B5B5")};
+        }
     }
 `;
