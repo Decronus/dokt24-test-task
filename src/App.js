@@ -24,7 +24,6 @@ function App() {
     useEffect(() => {
         Queries.getProducts().then((prod) => {
             dispatch(fetchProducts(prod.data));
-            console.log(prod.data);
         });
     }, []);
 

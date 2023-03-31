@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrap = styled.div`
-    width: 275px;
+    min-width: 250px;
     height: 100%;
     border: 1px solid #e8e8e8;
     border-radius: 14px;
