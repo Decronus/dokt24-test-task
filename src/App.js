@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Queries from "./services/queries.service";
+import { useSelector } from "react-redux";
+import { productsSelector } from "./store/selectors/main";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "./store/actions/creators/main";
+import { MainCardsWrap, MainWrap } from "./components/StyledMain";
+import Card from "./components/card/Card";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const products = useSelector(productsSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        Queries.getProducts().then((prod) => {
+            dispatch(fetchProducts(prod.data));
+            console.log(prod.data);
+        });
+    }, []);
+
+    return (
+        <div className="App">
+            <MainWrap>
+                <MainCardsWrap>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </MainCardsWrap>
+            </MainWrap>
+        </div>
+    );
 }
 
 export default App;
