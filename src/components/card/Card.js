@@ -2,7 +2,7 @@ import * as S from "./styles";
 import DeleteIcon from "../delete-icon/DeleteIcon";
 import RatingBlock from "../rating-block/RatingBlock";
 
-function Card({ category, title, price, description, rating, img, like, toggleLike }) {
+function Card({ category, title, price, description, rating, img, like, toggleLike, deleteProduct }) {
     function categoryColor() {
         switch (category) {
             case "men's clothing":
@@ -23,7 +23,7 @@ function Card({ category, title, price, description, rating, img, like, toggleLi
             <div>
                 <S.CardImg img={img}>
                     <S.CardBage color={categoryColor()}>{category}</S.CardBage>
-                    <DeleteIcon />
+                    <DeleteIcon deleteProduct={deleteProduct} />
                 </S.CardImg>
             </div>
 

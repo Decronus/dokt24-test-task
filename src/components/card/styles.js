@@ -54,6 +54,10 @@ export const CardRatingAndLike = styled.div`
     gap: 16px;
 
     & > svg {
+        &:hover {
+            transform: scale(1.1);
+        }
+
         cursor: pointer;
         path {
             fill: ${({ like }) => (like ? "#BF5A5A" : "none")};

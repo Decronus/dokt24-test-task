@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, TOGGLE_LIKE } from "../actions/types/main";
+import { FETCH_PRODUCTS, TOGGLE_LIKE, DELETE_PRODUCT } from "../actions/types/main";
 
 const initialState = {
     products: null,
@@ -28,6 +28,15 @@ export default function mainReducer(state = initialState, action) {
                     return;
                 }
             });
+
+            return {
+                ...state,
+                products: newProducts,
+            };
+        }
+
+        case DELETE_PRODUCT: {
+            const newProducts = JSON.parse(JSON.stringify(state.products)).filter((el) => el.id !== action.payload);
 
             return {
                 ...state,

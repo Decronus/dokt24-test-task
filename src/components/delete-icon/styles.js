@@ -10,4 +10,12 @@ export const DeleteIconWrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+        svg {
+            path {
+                fill: #9ca0c3;
+            }
+        }
+    }
 `;
