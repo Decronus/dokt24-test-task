@@ -12,10 +12,10 @@ export const CardWrap = styled.div`
 
 export const CardImg = styled.div`
     width: 100%;
-    height: 264px;
+    height: 300px;
     background-image: ${({ img }) => (img ? `url(${img})` : `url("https://shop.ki43.ru/image/product_no_image.png")`)};
-    background-size: cover;
-    background-postition: center;
+    background-size: 60%;
+    background-position: center;
     background-repeat: no-repeat;
     padding: 15px;
     display: flex;
@@ -52,6 +52,7 @@ export const CardBage = styled.div`
 export const CardRatingAndLike = styled.div`
     display: flex;
     gap: 16px;
+
     & > svg {
         cursor: pointer;
         path {

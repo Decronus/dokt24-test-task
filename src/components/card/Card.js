@@ -20,10 +20,12 @@ function Card({ category, title, price, description, rating, img, like }) {
 
     return (
         <S.CardWrap>
-            <S.CardImg img={img}>
-                <S.CardBage color={categoryColor()}>{category}</S.CardBage>
-                <DeleteIcon />
-            </S.CardImg>
+            <div>
+                <S.CardImg img={img}>
+                    <S.CardBage color={categoryColor()}>{category}</S.CardBage>
+                    <DeleteIcon />
+                </S.CardImg>
+            </div>
 
             <S.CardInfo>
                 <div>
