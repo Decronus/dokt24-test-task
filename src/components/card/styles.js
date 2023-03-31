@@ -11,7 +11,7 @@ export const CardWrap = styled.div`
 export const CardImg = styled.div`
     width: 100%;
     height: 264px;
-    background-image: url("https://expertreviews.b-cdn.net/sites/expertreviews/files/2016/08/xbox_one_s_side_on.jpg");
+    background-image: ${({ img }) => (img ? `url(${img})` : `url("https://shop.ki43.ru/image/product_no_image.png")`)};
     background-size: cover;
     background-postition: center;
     background-repeat: no-repeat;

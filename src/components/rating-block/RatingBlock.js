@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-function RatingBlock() {
+function RatingBlock({ rating }) {
     return (
         <S.RatingBlockWrap>
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,7 +10,7 @@ function RatingBlock() {
                     stroke="#EACC29"
                 />
             </svg>
-            <p>3,9</p>
+            <p>{rating}</p>
         </S.RatingBlockWrap>
     );
 }

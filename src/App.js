@@ -22,10 +22,19 @@ function App() {
         <div className="App">
             <MainWrap>
                 <MainCardsWrap>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    {products?.map((el, index) => {
+                        return (
+                            <Card
+                                key={index}
+                                title={el.title}
+                                description={el.description}
+                                price={el.price}
+                                category={el.category}
+                                rating={el.rating.rate}
+                                img={el.image}
+                            />
+                        );
+                    })}
                 </MainCardsWrap>
             </MainWrap>
         </div>
