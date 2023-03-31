@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS } from "../actions/types/main";
+import { FETCH_PRODUCTS, TOGGLE_LIKE } from "../actions/types/main";
 
 const initialState = {
     products: null,
@@ -16,6 +16,22 @@ export default function mainReducer(state = initialState, action) {
             return {
                 ...state,
                 products: products,
+            };
+        }
+
+        case TOGGLE_LIKE: {
+            const newProducts = JSON.parse(JSON.stringify(state.products));
+
+            newProducts.forEach((el) => {
+                if (el.id === action.payload) {
+                    el.like = !el.like;
+                    return;
+                }
+            });
+
+            return {
+                ...state,
+                products: newProducts,
             };
         }
 

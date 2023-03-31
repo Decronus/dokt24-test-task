@@ -46,7 +46,7 @@ export const CardBage = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 2px 6px;
+    padding: 2px 14px;
 `;
 
 export const CardRatingAndLike = styled.div`

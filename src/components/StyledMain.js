@@ -14,3 +14,10 @@ export const MainCardsWrap = styled.div`
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 `;
+
+export const MainFilterWrap = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+`;
